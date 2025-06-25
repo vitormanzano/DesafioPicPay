@@ -1,0 +1,23 @@
+name: DentistManager
+
+volumes:
+    dentist_manager_data:
+
+
+services:
+    postgres:
+        container_name: DesafioPicPay
+        image: postgres
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: DesafioPicPay
+        ports:
+            - "5432:5432"
+        volumes:
+            - dentist_manager_data:/var/lib/postgresql/data
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+            interval: 30s
+            timeout: 15s
+            retries: 3
