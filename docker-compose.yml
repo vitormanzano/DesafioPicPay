@@ -1,4 +1,4 @@
-name: DentistManager
+name: DesafioPicpay
 
 volumes:
     dentist_manager_data:
